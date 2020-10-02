@@ -1,4 +1,4 @@
-const isProd: boolean = window.location.hostname === 'www.ocelot-ide.org';
-export const CLD_FN_BASE_URL: string = `https://us-central1-arjunguha-research-group.cloudfunctions.net/${isProd ? 'paws' : 'ocelot-beta'}/`,
-             LOGIN_CLIENT_ID: string = '692270598994-p92ku4bbjkvcddouh578eb1a07s8mghc.apps.googleusercontent.com',
+const isProd: boolean = window.location.hostname === 'ocelot.thientran.io';
+export const CLD_FN_BASE_URL: string = `https://localhost:8000/`,
+             LOGIN_CLIENT_ID: string = '373758885533-u7l9aljbkmlaa55q1u8tnug5p19lqd9u.apps.googleusercontent.com',
              MODULE_WL_URL: string = `https://raw.githubusercontent.com/umass-compsci220/ocelot-settings/master/libraries${isProd ? '' : '-beta'}.json`;
