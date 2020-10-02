@@ -16,7 +16,6 @@ const errorReporting = new ErrorReporting();
 
 const storage = Storage();
 const fileBucket = storage.bucket('ocelot-student-files');
-const settingsBucket = storage.bucket('plasma-settings');
 const historyBucket = storage.bucket('ocelot-student-history');
 
 const datastore = new Datastore({});
@@ -43,8 +42,7 @@ async function getSettings() {
   if (settings !== undefined) {
     return settings;
   }
-  const settingsFile = await settingsBucket.file('ocelot-settings.json').download();
-  return JSON.parse(settingsFile.toString());
+  return {clientID: 'insert-your-google-auth-client-id', sessionDuration: 5};
 }
 
 async function getClientID() {
