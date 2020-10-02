@@ -1,5 +1,5 @@
 # Notes: 
-This is my repository with the modifications [here](https://github.com/umass-compsci220/Ocelot/issues/131) to self host it.
+This is my repository with the modifications mentioned [here](https://github.com/umass-compsci220/Ocelot/issues/131) to self host it.
 
 # Ocelot
 
