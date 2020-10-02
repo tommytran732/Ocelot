@@ -520,14 +520,6 @@ morgan.token('ejsversion', (req, res) => {
   return 'notprovided'
 });
 
-paws.use(morgan(
-  ':method :url :status :username ocelot-:ocelotversion ejs-:ejsversion :res[content-length] - :response-time ms',
-  {
-    stream: {
-      write: (str: string) => console.log(str)
-    }
-  })); // logging all http traffic
-
 paws.use(cors({
 origin: [
   'https://www.ocelot-ide.org',
@@ -538,6 +530,13 @@ origin: [
 
 paws.use(bodyParser.json()); // parse all incoming json data
 
+paws.use(morgan(
+  ':method :url :status :username ocelot-:ocelotversion ejs-:ejsversion :res[content-length] - :response-time ms',
+  {
+    stream: {
+      write: (str: string) => console.log(str)
+    }
+  })); // logging all http traffic
 
 type Body = {
   status: string,
