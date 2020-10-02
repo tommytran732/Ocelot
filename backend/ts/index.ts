@@ -15,8 +15,8 @@ import { URLSearchParams } from 'url';
 const errorReporting = new ErrorReporting();
 
 const storage = Storage();
-const fileBucket = storage.bucket('ocelot-student-files');
-const historyBucket = storage.bucket('ocelot-student-history');
+const fileBucket = storage.bucket('ocelot-user-files');
+const historyBucket = storage.bucket('ocelot-user-history');
 
 const datastore = new Datastore({});
 const datastoreKind = 'CS220AllowedAccounts';
