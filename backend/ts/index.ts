@@ -42,7 +42,7 @@ async function getSettings() {
   if (settings !== undefined) {
     return settings;
   }
-  return {clientID: 'insert-your-google-auth-client-id', sessionDuration: 5};
+  return {clientID: '373758885533-u7l9aljbkmlaa55q1u8tnug5p19lqd9u.apps.googleusercontent.com', sessionDuration: 5};
 }
 
 async function getClientID() {
