@@ -1,3 +1,6 @@
+# Notes: 
+This is my repository with the modifications [here](https://github.com/umass-compsci220/Ocelot/issues/131) to self host it.
+
 # Ocelot
 
 A web-based IDE for JavaScript, without the "bad parts".
