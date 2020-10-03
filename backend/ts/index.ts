@@ -522,7 +522,7 @@ morgan.token('ejsversion', (req, res) => {
 
 paws.use(cors({
 origin: [
-  'https://www.ocelot-ide.org',
+  'https://ocelot.thientran.io',
   'https://umass-compsci220.github.io',
   'http://localhost:8080',
   'http://localhost:8081',
