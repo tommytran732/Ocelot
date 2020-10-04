@@ -1,6 +1,31 @@
 # Notes: 
 This is my repository with the modifications mentioned [here](https://github.com/umass-compsci220/Ocelot/issues/131) to self host it.
 
+To deploy, setup 2 subdomain for Ocelot. One for the front end, one for the backend.
+
+1. Set up GCP
+
+Create a Project in Google Cloud Platform, instructions here
+Create 2 Google Storage Buckets (instructions here) with names of your choice. (One bucket is for user-created files, one is for storing history of the files)
+Create a Google Datastore (instructions here) (Firestore in Datastore mode). In the Datastore, create an entity with the Kind set as AuthorizedEmails. Create Key Identifier with a Custom name and set it to the emails that are allowed to log into Ocelot.
+
+2.
+Modify backend/ts/index.ts
+Change the client id in [line 45](https://github.com/tommytran732/Ocelot/blob/479f73d76daf5a2e1fc2cdd51b3e231129552dc5/backend/ts/index.ts#L45) to your Google Auth Client ID.
+
+3.
+
+Modify frontend/src/secrets.ts
+
+CLD_FN_BASE_URL - Set the URL to the backend's address. It must be reachable over the internet. I would recommend that you setup an NGINX reverse proxy with https for the backend rather than connecting to it directly.
+
+LOGIN_CLIENT_ID - replace the entire URL to your Google Auth Client ID.
+
+4.
+Building and running the frontend and backend
+Follow the README for Build and Run instructions.
+
+If you intend to run the back end with systemd, be sure to specify the GOOGLE_APPLICATION_CREDENTIALS variable to the json file generated while you run `gcloud auth application-default login` in the instructions below. By default, it should be at `/root/.config/gcloud/application_default_credentials.json`.
 # Ocelot
 
 A web-based IDE for JavaScript, without the "bad parts".
