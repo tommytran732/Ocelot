@@ -523,9 +523,6 @@ morgan.token('ejsversion', (req, res) => {
 paws.use(cors({
 origin: [
   'https://ocelot.thientran.io',
-  'https://umass-compsci220.github.io',
-  'http://localhost:8080',
-  'http://localhost:8081',
 ]}));
 
 paws.use(bodyParser.json()); // parse all incoming json data
