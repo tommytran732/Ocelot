@@ -1,7 +1,7 @@
 # Notes: 
 This is my repository with the modifications mentioned [here](https://github.com/umass-compsci220/Ocelot/issues/131) to self host it.
 
-To deploy, setup 2 subdomain for Ocelot. One for the front end, one for the backend.
+To deploy, setup 2 subdomains for Ocelot. One for the front end, one for the backend.
 
 1. Set up GCP
 
@@ -12,6 +12,7 @@ Create a Google Datastore (instructions here) (Firestore in Datastore mode). In 
 2.
 Modify backend/ts/index.ts
 Change the client id in [line 45](https://github.com/tommytran732/Ocelot/blob/479f73d76daf5a2e1fc2cdd51b3e231129552dc5/backend/ts/index.ts#L45) to your Google Auth Client ID.
+Then, change the origin in [line 525](https://github.com/tommytran732/Ocelot/blob/d6e5c3b642b949878b790e2fe496f0a9ac91cee0/backend/ts/index.ts#L525) to the url that your Ocelot frontend will be running on.
 
 3.
 
