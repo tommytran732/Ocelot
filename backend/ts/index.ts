@@ -19,7 +19,7 @@ const fileBucket = storage.bucket('ocelot-user-files');
 const historyBucket = storage.bucket('ocelot-user-history');
 
 const datastore = new Datastore({});
-const datastoreKind = 'CS220AllowedAccounts';
+const datastoreKind = 'AuthorizedEmails';
 
 let client: OAuth2Client | undefined = undefined;
 let CLIENT_ID: string | undefined = undefined;
