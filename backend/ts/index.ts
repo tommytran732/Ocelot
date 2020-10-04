@@ -15,8 +15,8 @@ import { URLSearchParams } from 'url';
 const errorReporting = new ErrorReporting();
 
 const storage = Storage();
-const fileBucket = storage.bucket('ocelot-user-files');
-const historyBucket = storage.bucket('ocelot-user-history');
+const fileBucket = storage.bucket('ocelot-ide-files');
+const historyBucket = storage.bucket('ocelot-ide-history');
 
 const datastore = new Datastore({});
 const datastoreKind = 'AuthorizedEmails';
