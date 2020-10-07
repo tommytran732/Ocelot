@@ -11,7 +11,7 @@ Create 2 Google Storage Buckets with names of your choice. (One bucket is for us
 
 Create a Google Datastore (Firestore in Datastore mode). In the Datastore, create an entity with the Kind set as AuthorizedEmails. Create Key Identifier with a Custom name and set it to the emails that are allowed to log into Ocelot.
 
-2. Clone [this repository] (https://github.com/tommytran732/ocelot-settings) on your Github and change the baseURL in [line 268] in src/lib220.js and [line 241] in dst/lib220.js to the URL where your backend will be listening on.
+2. Clone [this repository](https://github.com/tommytran732/ocelot-settings) on your Github and change the baseURL in [line 268](https://github.com/tommytran732/ocelot-settings/blob/441ddca1d6071718c4955691b2852293a101d434/src/lib220.ts#L268) in src/lib220.js and [line 241](https://github.com/tommytran732/ocelot-settings/blob/441ddca1d6071718c4955691b2852293a101d434/dist/lib220.js#L241) in dst/lib220.js to the URL where your backend will be listening on.
 
 3. Modify backend/ts/index.ts
 
