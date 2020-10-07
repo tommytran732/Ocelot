@@ -1,5 +1,5 @@
 # Notes: 
-This is my repository with the modifications mentioned [here](https://github.com/umass-compsci220/Ocelot/issues/131) to self host it.
+This is my repository with the modifications mentioned [here](https://github.com/umass-compsci220/Ocelot/issues/131) to self host it. I have also made it so that when you delete a file, it's also deleted from history.
 
 To deploy, setup 2 subdomains for Ocelot. One for the frontend, one for the backend.
 
@@ -11,7 +11,9 @@ Create 2 Google Storage Buckets with names of your choice. (One bucket is for us
 
 Create a Google Datastore (Firestore in Datastore mode). In the Datastore, create an entity with the Kind set as AuthorizedEmails. Create Key Identifier with a Custom name and set it to the emails that are allowed to log into Ocelot.
 
-2. Modify backend/ts/index.ts
+2. Clone [this repository] (https://github.com/tommytran732/ocelot-settings) on your Github and change the baseURL in [line 268] in src/lib220.js and [line 241] in dst/lib220.js to the URL where your backend will be listening on.
+
+3. Modify backend/ts/index.ts
 
 Change the client id in [line 45](https://github.com/tommytran732/Ocelot/blob/479f73d76daf5a2e1fc2cdd51b3e231129552dc5/backend/ts/index.ts#L45) to your Google Auth Client ID.
 
@@ -22,17 +24,18 @@ Finally, change [line 18](https://github.com/tommytran732/Ocelot/blob/d6e5c3b642
 
 By default, the backend will be listening on port 8000. If there is a conflict, you can change it in [line 3]( https://github.com/tommytran732/Ocelot/blob/84d6d3000cf8136597009f630d31363f9813b89c/backend/ts/testServer.ts#L3) in the `backend/ts/testServer.ts` file.
 
-3. Modify frontend/src/secrets.ts
+4. Modify frontend/src/secrets.ts
 
 CLD_FN_BASE_URL - Set the URL to the backend's address. It must be reachable over the internet. I would recommend that you setup an NGINX reverse proxy with https on the backend's subdomain for the backend rather than connecting to it directly.
 
 LOGIN_CLIENT_ID - replace the entire URL to your Google Auth Client ID.
 
-4. Building and running the frontend and backend
+5. Building and running the frontend and backend
 
 Follow the README for Build and Run instructions.
 
 If you intend to run the back end with systemd, be sure to specify the GOOGLE_APPLICATION_CREDENTIALS variable to the json file generated while you run `gcloud auth application-default login` in the instructions below. By default, it should be at `/root/.config/gcloud/application_default_credentials.json`.
+
 # Ocelot
 
 A web-based IDE for JavaScript, without the "bad parts".
@@ -84,6 +87,11 @@ To setup and run backend locally
 cd Ocelot/backend
 yarn install
 yarn run build && yarn run serve
+```
+
+To setup file retention for history
+```
+gsutil versioning set on gs://ocelot-student-history
 ```
 
 ## Development Instructions
