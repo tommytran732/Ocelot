@@ -13,6 +13,8 @@ Create a Google Datastore (Firestore in Datastore mode). In the Datastore, creat
 
 2. Clone [this repository](https://github.com/tommytran732/ocelot-settings) on your Github and change the baseURL in [line 268](https://github.com/tommytran732/ocelot-settings/blob/441ddca1d6071718c4955691b2852293a101d434/src/lib220.ts#L268) in src/lib220.js and [line 241](https://github.com/tommytran732/ocelot-settings/blob/441ddca1d6071718c4955691b2852293a101d434/dist/lib220.js#L241) in dist/lib220.js to the URL where your backend will be listening on.
 
+Change the links in your libraries.json the raw file links on your repo (Just change tommytran732 to your username).
+
 3. Modify backend/ts/index.ts
 
 Change the client id in [line 45](https://github.com/tommytran732/Ocelot/blob/479f73d76daf5a2e1fc2cdd51b3e231129552dc5/backend/ts/index.ts#L45) to your Google Auth Client ID.
@@ -29,6 +31,8 @@ By default, the backend will be listening on port 8000. If there is a conflict, 
 CLD_FN_BASE_URL - Set the URL to the backend's address. It must be reachable over the internet. I would recommend that you setup an NGINX reverse proxy with https on the backend's subdomain for the backend rather than connecting to it directly.
 
 LOGIN_CLIENT_ID - replace the entire URL to your Google Auth Client ID.
+
+MODULE_WL_URL - Change this to the raw file of libraries.json in the repository which you cloned in step 2.
 
 5. Building and running the frontend and backend
 
