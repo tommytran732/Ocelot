@@ -240,6 +240,7 @@ async function changeFile(req: Request) {
   }
 
   const currentFile = fileBucket.file(`${req.body.userEmail}/${currentFileChange.fileName}`);
+  const historyFile = historyBucket.file(`${req.body.userEmail}/${currentFileChange.fileName}`);
   if (currentFileChange.type === 'create') {
     // Non-null assertion of changes can be saved
     await currentFile.save(currentFileChange.changes!, { resumable: false });
@@ -251,6 +252,7 @@ async function changeFile(req: Request) {
   }
   else if (currentFileChange.type === 'delete') {
     await currentFile.delete();
+    await historyFile.delete();
   }
   else {
     return { statusCode: 500, body: { status: 'error', message: `Bad file operation` } };
