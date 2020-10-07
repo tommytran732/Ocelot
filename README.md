@@ -93,9 +93,9 @@ yarn install
 yarn run build && yarn run serve
 ```
 
-To setup file retention for history
+To setup file retention for history (change ocelot-ide-history in the following command to the bucket name which you use to store file history)
 ```
-gsutil versioning set on gs://ocelot-student-history
+gsutil versioning set on gs://ocelot-ide-history
 ```
 
 ## Development Instructions
